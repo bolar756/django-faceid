@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>start Exam</title>
+    <link rel="stylesheet" href="{% static 'css/exam.css' %}">
+</head>
+<body>
+    <ul>
+    {% for sci in science %}
+    <div class="exam {{sci.tags}}">
+   <li><p>{{sci.question_text}}</p></li>
+   <b hidden class="answer">{{sci.answer_text}}</b>
+   <input type="text" name="" id="">
+   <b id="score"></b>
+</div>
+   {% endfor %} 
+   <button type="submit" onclick="evaluator()">Submit exam</button>  
+</ul>
+</body>
+</html>
+<script>
+const programming = '{{program}}';
+const english = '{{english}}';
+const biology ='{{biology}}';
+const mathematics = '{{math}}'
+const question = document.querySelectorAll('p')
+const container = document.querySelectorAll('.exam')
+const answer = document.querySelectorAll('.answer')
+const score = document.querySelectorAll('#score')
+const input  = document.querySelectorAll('.exam input')
+for (let i = 0; i < question.length; i++) {
+    const element = question[i];
+    console.log((question.length)*2)
+ };
+ const questionElements = document.querySelectorAll('p');
+const questionArray = Array.from(questionElements);
+
+function remover(){
+    for (let i = 0; i < container.length; i++) {
+    const element = container[i];
+    if (programming == 'off' && element.classList.contains('programming') == true){
+        container[i].remove(element.classList.contains('programming'));
+    }
+    if (english == 'off' && element.classList.contains('english') == true){
+        container[i].remove(element.classList.contains('english'));
+    }
+    if (biology == 'off' && element.classList.contains('biology') == true){
+        container[i].remove(element.classList.contains('biology'));
+    }
+    if (mathematics == 'off' && element.classList.contains('mathematics') == true){
+        container[i].remove(element.classList.contains('mathematics'));
+    }
+  };
+}
+remover()
+function evaluator(){
+    for (let i = 0; i < input.length; i++) {
+        const element = input[i];
+        if (input[i].value == answer[i].innerText){
+                score[i].innerText=3
+                container[i].setAttribute('status','correct')
+            }
+        else if( input[i].value = null){
+               score[i].innerText=0
+               container[i].setAttribute('status','wrong')
+        }    
+            else{
+            score[i].innerText = 0
+            container[i].setAttribute('status','wrong')
+            }
+            input[i].toggleAttribute('readonly',true)
+            document.querySelector('button').setAttribute('disabled',true)
+    }
+}
+</script>

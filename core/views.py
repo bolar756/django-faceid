@@ -18,7 +18,10 @@ def logout_view(request):
 
 @login_required
 def home_view(request):
-    return render(request, 'main.html', {})
+    if request.user.is_authenticated:
+       return render(request, 'exam.html', {})
+    else:
+        return render(request, 'main.html', {})
 
 def find_user_view(request):
     if is_ajax(request):

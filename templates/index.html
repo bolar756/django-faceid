@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
+</head>
+<body>
+    <div class="container">
+         <div class="h1"><h1>Welcome to Examainia</h1></div>
+         <div class="h2"><h2>Streamline Your Assessments with Our Powerful Exam Platform!</h2></div>
+         <div class="text">
+             <p>
+                Say goodbye to paper-based exams and hello to a more efficient and flexible way to test your knowledge. 
+                Our user-friendly examination platform offers a range of features to simplify the assessment process for both administrators and test-takers.
+             </p>
+         </div>
+         <div class="buttons">
+            <button onclick="window.open(target='/login', as='_self')">Login</button>
+            <button onclick="window.open(target='/signup', as='_self')">Signup</button>
+            <button onclick="window.open(target='/Facial', as='_self')">Use face Id</button>
+         </div>
+    </div>
+</body>
+</html>
+<script>
+VANTA.HALO({
+  el: "body",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00
+})
+</script>

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@100..400&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+body, .container{
+    background: #131a43;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    display:  flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+h1{
+    text-align: center;
+    font-size: 33px;
+    font-family: "Playwrite PL", cursive;
+    color: aqua;
+}
+.child{
+    width:  40%;
+    background: white;
+    box-shadow:  2px 4px 7px;
+    padding:  30px;
+    cursor: pointer;
+}
+.child.checked{
+    background:  yellow;
+}
+.bxs-x-circle{
+  color: red;
+}
+.flexer{
+    display: flex;
+    justify-content: space-between;
+}
+.bxs-check-circle{
+    color: green;
+}
+button{
+    width: 50%;
+    height: 60px;
+    background: rgba(12, 12, 234, .7);
+    border: 0;
+    box-shadow: 2px 5px 7px;
+    cursor: pointer;
+    margin-top: 40px;
+}

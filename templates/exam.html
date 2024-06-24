@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <title>Choose exam</title>
+</head>
+<body>
+    <form action="{% url 'Exams' %}" method="post">
+        {% csrf_token %}
+            <div class="container">
+        <h1>Choose your exams: you can only choose 3 </h1>
+        <div class="form">
+      <div class="child">
+        <div class="flexer">
+            <h3>Programming </h3>
+            <i class='bx bxs-x-circle'></i>
+        </div>
+    <div class="cons">
+        <input type="checkbox" checked name="programming" id="" hidden value="off"></div>
+</div>
+      <div class="child">
+        <div class="flexer">
+            <h3>Mathematics</h3>
+            <i class='bx bxs-x-circle'></i>
+        </div>
+    <div class="cons"><input type="checkbox" checked  name="Mathematics" id="" hidden value="off"></div>
+</div>
+      <div class="child">
+        <div class="flexer">
+            <h3>English</h3>
+            <i class='bx bxs-x-circle'></i>
+        </div>
+    <div class="cons">
+        <input type="checkbox" checked  name="english" id="" hidden value="off">
+    </div>
+</div>
+      <div class="child">
+        <div class="flexer">
+            <h3>Biology</h3>
+            <i class='bx bxs-x-circle'></i>
+        </div>
+    <div class="cons">
+        <input type="checkbox" checked name="biology" id="" hidden  value="off"></div>
+</div>
+    </div>
+    <button > Start exam</button>
+</div>
+</form>
+</body>
+</html>
+<script src="{% static 'js/exam.js' %}"></script>

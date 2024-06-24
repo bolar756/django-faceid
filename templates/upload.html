@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Programming Questions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Upload Programming Questions</h1>
+    <form method="post" enctype="multipart/form-data" action="{% url 'save' %}">
+        {% csrf_token %}  <div class="form-group">
+            <label for="csv_file">CSV File:</label>
+            <input type="file" name="csv_file" id="csv_file" accept=".csv" required>
+            <p class="help-text">Upload a CSV file containing programming questions.</p>
+            {% if error %}  <p class="error-message">{{ error }}</p>
+            {% endif %}
+        </div>
+
+        <button type="submit" >Upload Questions</button>
+    </form>
+</body>
+</html>

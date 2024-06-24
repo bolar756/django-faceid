@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@100..400&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    list-style-type: decimal;
+}
+body{
+    display: flex;
+    background: #131a43;
+}
+ul{
+    padding: 30px;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ul .exam{
+    width: 100%;
+    padding: 50px;
+    font-size:  33px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.exam input{
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    outline: 0;
+    border-bottom: 2px red;
+}
+button[disabled=true], button{
+    width: 50%;
+    height: 30px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    text-transform: capitalize;
+    font-size: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
